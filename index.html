@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>TodoList</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="script.js"></script>
+	<style >
+	span.done-true{
+		color:grey;
+		text-decoration: line-through;
+		font-style: italic;
+
+	}
+
+
+	</style>
+
+</head>
+<body ng-app = "myApp" ng-controller = "myCtrl">
+
+<h1 style = "text-align:center;">Add a Task</h1>
+<input ng-model = "task" type = "text" ng-keyup = "keyPressed()" style = "text-align:center;display:block;margin:0 auto;padding:10px;width:300px;">
+
+<div>
+	<ul>
+		<li ng-repeat = "oneTask in tasks">
+			<span class = "done-{{oneTask.status}}"><input type="checkbox" ng-model = oneTask.status> {{oneTask.name}}</span>
+
+
+		</li>
+
+
+	</ul>
+
+
+</div>
+
+
+</body>
+
+
+</html> 
